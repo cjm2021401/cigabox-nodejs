@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="keywords" content="DANCE, CULTURE, STREET ">
+    <meta name="description" content="영화 예매 사이">
+    <title>CIGABOX</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/modal-video.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+    <style>
+
+        .navbar{
+            background-color: #1d2124 !important;
+        }
+        .btn-primary{
+            color : white !important;
+        }
+
+        h1{font-family: 'Noto Sans KR', sans-serif;}
+        h4{font-family: 'Noto Sans KR', sans-serif;}
+        h2{font-family: 'Noto Sans KR', sans-serif;}
+        h3{font-family: 'Noto Sans KR', sans-serif;}
+        h5{font-family: 'Noto Sans KR', sans-serif;}
+
+        .column#caption {
+            position: relative;
+        }
+        .column#caption .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        .column#caption .text h1 {
+            margin: 0;
+            color: white;
+        }
+        .column#caption:hover .text {
+            opacity: 1;
+
+        }
+        .column#caption:hover img {
+            -webkit-filter: sepia(90%);
+        }
+        .column#caption {
+            position: relative;
+        }
+        .column#caption .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        .column#caption .text h1 {
+            margin: 0;
+            color: white;
+        }
+        .column#caption:hover .text {
+            opacity: 1;
+
+        }
+        .column#caption:hover img {
+            -webkit-filter: opacity(50%);
+        }
+    </style>
+</head>
+<body>
+<style type="text/css">
+    img{
+        max-width: 100%;
+        height: 100% !important;
+    }
+    footer { padding: 50px 0; text-align: center; background-color: #383a3f; color:white;
+    }
+
+    footerul li { display: inline; }
+    footerul a { font-size: 18px; margin: 0 15px; }
+    a:link { color: #513926; }
+    a:visited { color: #513926; }
+    a:hover { color: #7F593C; }
+</style>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/"><img src="images/home.png" width="40" height="40" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand" href="/"><strong>Home</strong></a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                <li class="nav-item active">
+                    <a class="nav-link" style="color:#ffffff" href="logout">Logout<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" style="color:#ffffff" href="#" data-toggle="modal" data-target="#ticketlist"><%=user.name%>님의 TICKET<span class="sr-only">(current)</span></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+<main class="container my-1 " >
+
+    <div class="pricing-header px-3 py-1 pt-md-3 pb-md-1 mx-auto text-center">
+        <h3 class="display-6 font-weight-bold" >THEATER</h3>
+
+    </div>
+    <hr class="my-2" >
+    <hr class="my-3" style="background-color: white">
+    <section id="carousel-3" class="text-center">
+
+        <div class="row">
+            <% if(t_data != null && t_data.length > 0){ %>
+
+                <% for ( var i = 0; i < t_data.length; i++){ %>
+                <!-- href를 이용해서 페이지 이동시  data-ajax="false" 를 추가해줘야 함. 그렇지 않으면 ajax형태로 가져온 데이터(화면)을 추가함.-->
+
+                <div class="col-md-6">
+                    <form action="/main" method="post">
+                        <div class="form-group ">
+                           <div class="card">
+                            <button type="submit" style="border:0; outline:0" class = "video-play column col-xs-6"   id = "caption"><span class = "text"><h1 class = "column col-xs-6" id = "caption">CLICK THIS</h1></span>
+                                <img src=<%=t_data[i].t_url%> class="img-fluid" alt="">
+                                <div class="mask rgba-white-slight"></div>
+                            </button>
+                            <div class="card-body">
+                                <h5 class="card-title"><%=t_data[i].t_area%> </h5>
+                                <p class="card-text"><%=t_data[i].introduction%></p>
+                                <input type="hidden" id="area" name="area" value=<%=t_data[i].t_area%>>
+                                <button type="submit"  class="btn btn-secondary" id="please2">CHOICE</button>
+
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Premium service</small>
+                            </div>
+
+                        </div>
+                        </div>
+                    </form>
+                </div>
+                <% } %>
+
+            <% }else{ %>
+                <p>등록된 영화가 없습니다</p>
+            <% } %>
+        </div>
+
+
+
+    <hr class="my-3" >
+    <section id="examples" class="text-center">
+
+
+
+    </section>
+    </section>
+    <hr class="my-4" style="background-color: white">
+</main>
+
+<footer class="mastfoot mt-auto " id="foot">
+
+</footer>
+
+<div class="modal fade" id="ticketlist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><%=user.name%>님의 TICKET</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <table  class="table table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">TITLE</th>
+                        <th scope="col">THEATHER</th>
+                        <th scope="col">HOLE</th>
+                        <th scope="col">SEAT</th>
+                        <th scope="col">DATE</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%for(var i=0; i<l_data.length; i++){%>
+                    <tr>
+                        <th scope="row"><%=i+1%></th>
+                        <td><%=l_data[i].m_title%></td>
+                        <td><%=l_data[i].t_area%></td>
+                        <td><%=l_data[i].h_number%></td>
+                        <td><%=l_data[i].seat_n%></td>
+                        <td><%=l_data[i].start.substring(0,2)%>월 <%=l_data[i].start.substring(2,4)%>일 <%=l_data[i].start.substring(4,6)%>시</td>
+
+                    </tr>
+                    <%}%>
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="javascripts/bootstrap.js"></script>
+</body>
+</html>

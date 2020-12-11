@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="keywords" content="DANCE, CULTURE, STREET ">
+    <meta name="description" content="영화 예매 사이">
+    <title>CIGABOX</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+    <style>
+
+        .navbar{
+            background-color: #1d2124 !important;
+        }
+        .btn-primary{
+            color : white !important;
+        }
+        p{font-family: 'Noto Sans KR', sans-serif;}
+        h1{font-family: 'Noto Sans KR', sans-serif;}
+        h4{font-family: 'Noto Sans KR', sans-serif;}
+        h2{font-family: 'Noto Sans KR', sans-serif;}
+        h3{font-family: 'Noto Sans KR', sans-serif;}
+        h5{font-family: 'Noto Sans KR', sans-serif;}
+
+    </style>
+</head>
+<body>
+<style type="text/css">
+    img{
+        max-width: 100%;
+        height: auto !important;
+    }
+    footer { padding: 50px 0; text-align: center; background-color: #383a3f; color:white;
+    }
+
+    footerul li { display: inline; }
+    footerul a { font-size: 18px; margin: 0 15px; }
+    a:link { color: #513926; }
+    a:visited { color: #513926; }
+    a:hover { color: #7F593C; }
+</style>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/"><img src="images/home.png" width="40" height="40" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand" href="/"><strong>Home</strong></a>
+
+        </div>
+    </nav>
+</header>
+
+
+
+<main class="container my-1 " >
+    <hr class="my-1" style="background-color: white">
+    <div class="pricing-header px-3 py-1 pt-md-3 pb-md-1 mx-auto text-center">
+        <h3 class="display-6 font-weight-bold" >LOGIN</h3>
+
+    </div>
+    <hr class="my-2" >
+    <section id="carousel-1">
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <hr class="my-4" style="background-color: white">
+        <form method="post">
+            <div class="form-group ">
+                <label for="id_input">ID</label>
+                <input type="text" class="form-control form-control-lg" name="login_id" aria-describedby="idHelp" placeholder="Enter ID">
+                <small id="idHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <hr class="my-2" style="background-color: white">
+            <div class="form-group">
+                <label for="pw_input">Password</label>
+                <input type="password" class="form-control form-control-lg" name="login_pw" placeholder="Password">
+
+            </div>
+            <hr class="my-4" style="background-color: white">
+            <a href="signup">
+                <button type="button" class="btn btn-secondary btn-lg">Sign Up</button></a>
+            <button type="submit" style="float:right" class="btn btn-primary btn-lg" id="please">Submit</button>
+
+        </form>
+    </div>
+    <div class="col-2"></div>
+</div>
+    </section>
+
+    <hr class="my-3" >
+    <section id="examples" class="text-center">
+
+
+
+    </section>
+
+    <hr class="my-4" style="background-color: white">
+</main>
+
+<footer class="mastfoot mt-auto " id="foot">
+    <%if (message==1){%>
+        <script type="text/javascript">
+
+            alert("로그인에 실패하였습니다.");
+
+        </script>
+    <%}%>
+
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="javascripts/bootstrap.js"></script>
+
+</body>
+</html>

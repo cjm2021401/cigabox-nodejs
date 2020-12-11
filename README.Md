@@ -1,23 +1,23 @@
-#CIGA BOX 
+# CIGA BOX 
 - 실시간 남은 좌석수에 맡게 가격을 할인해주는 영화 예매 사이트입니다.
 
-##WHAT IS CIGABOX
+## WHAT IS CIGABOX
 - 코로나19가 번짐에 따라 영화계 불황이 이어짐 -> 영화관 자리많이 빔 
 - 남은좌석이 많을수록 영화 티켓 가격이 할인되는 시스템
 - 회원가입/로그인, 영화관선택, 영화선택, 조건에 맞는 상영하고있는 영화선택, 좌석 선택, 예약내역, 티켓확인 까지 가능한 서비스
 
 
-###구동원리
+### 구동원리
 - MYSQL을 이용하여 데이터베이스 구축
 - NODE JS를 이용한 웹서버 구축, DB와 연결 및 값가져오기 / 내보내기
 - HTTP, CSS, JAVASCRIPT로 구현한 웹프론트로 사람들에게 뷰를 제공
 
 
-###요구사항
+### 요구사항
 - MYSQL 설치
 - NODE JS 지원
 
-###기본 데이터베이스 설정
+### 기본 데이터베이스 설정
 
 <pre><code>
 CREATE USER(
@@ -146,8 +146,8 @@ seat_n INT NOT NULL
 </code></pre>
 - 데이터베이스 설정은 routes 폴더의 index.js에서 본인의 date로 바꿔야함
 
-###구동
+### 구동
                 npm install
                 npm start
-###문의 
--cjm2021401@khu.ac.kr
+### 문의 
+- cjm2021401@khu.ac.kr
